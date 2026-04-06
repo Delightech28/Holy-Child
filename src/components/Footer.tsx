@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import schoolLogo from "@/assets/school-logo.jpg";
+import churchLogo from "@/assets/church-logo.jpg";
 
 const Footer = () => {
   return (
@@ -9,8 +11,9 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
-                <GraduationCap className="h-5 w-5 text-secondary-foreground" />
+              <div className="flex items-center gap-1.5">
+                <img src={churchLogo} alt="Church Logo" className="h-10 w-10 rounded-full object-cover" />
+                <img src={schoolLogo} alt="School Logo" className="h-10 w-10 rounded-full object-cover" />
               </div>
               <span className="font-display text-xl font-bold">Holy Child School</span>
             </div>
@@ -25,6 +28,7 @@ const Footer = () => {
             <nav className="flex flex-col gap-2 font-sans text-sm">
               <Link to="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">Home</Link>
               <Link to="/about" className="text-primary-foreground/80 hover:text-secondary transition-colors">About Us</Link>
+              <Link to="/gallery" className="text-primary-foreground/80 hover:text-secondary transition-colors">Gallery</Link>
               <Link to="/enrollment" className="text-primary-foreground/80 hover:text-secondary transition-colors">Enrollment</Link>
               <Link to="/contact" className="text-primary-foreground/80 hover:text-secondary transition-colors">Contact</Link>
             </nav>

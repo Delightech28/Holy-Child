@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import schoolLogo from "@/assets/school-logo.jpg";
+import churchLogo from "@/assets/church-logo.jpg";
 
 const navItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
+  { label: "Gallery", path: "/gallery" },
   { label: "Enrollment", path: "/enrollment" },
   { label: "Contact", path: "/contact" },
 ];
@@ -17,9 +20,10 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
-            <GraduationCap className="h-5 w-5 text-primary-foreground" />
+        <Link to="/" className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5">
+            <img src={churchLogo} alt="Church Logo" className="h-10 w-10 rounded-full object-cover border border-border/50" />
+            <img src={schoolLogo} alt="School Logo" className="h-10 w-10 rounded-full object-cover border border-border/50" />
           </div>
           <span className="font-display text-xl font-bold text-foreground">
             Holy Child
